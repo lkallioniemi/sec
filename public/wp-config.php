@@ -14,6 +14,7 @@
  * @package WordPress
  */
 
+require dirname(__FILE__).'/../util/frantic/security/security.php';
 
 $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 
@@ -130,3 +131,6 @@ if ( !defined("ABSPATH") )
 
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . "wp-settings.php");
+
+
+new Frantic\FranticSecurity();
